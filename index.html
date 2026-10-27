@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tonight's Deals Dubai</title>
+<meta name="description" content="Food deals in Dubai, each one read at its source, with end dates and the catch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>Tonight's Deals Dubai</h1>
+    <p class="lede">Food deals in Dubai, each one read at its source. Every deal shows when it ends, what the catch is and where it came from.</p>
+    <div class="signup" id="signup">
+      <div><strong>Get the best 5 deals every Thursday.</strong> <span id="signupText">Free, before the weekend.</span></div>
+      <a class="btn" id="signupBtn" target="_blank" rel="noopener" hidden>Follow for free</a>
+    </div>
+    <p class="sample" id="sampleNote"><strong>These are sample deals.</strong> Replace them with real ones you've checked yourself before you share this page.</p>
+  </header>
+
+  <div class="bar">
+    <input class="search" id="q" type="search" placeholder="Search a restaurant, cuisine or area" aria-label="Search deals">
+    <div class="chips" id="typeChips" role="group" aria-label="Deal type"></div>
+    <div class="row">
+      <div class="chips" id="areaChips" role="group" aria-label="Area"></div>
+      <label class="count"><span class="visually">Sort </span>
+        <select id="sort" aria-label="Sort deals">
+          <option value="ending">Ending soonest</option>
+          <option value="az">A to Z</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <main id="list" aria-live="polite"></main>
+
+  <section class="tip" aria-labelledby="memH">
+    <h3 id="memH">Delivery memberships compared</h3>
+    <p class="lede">Prices online don't agree, so each row says how sure we are. Check in the app before you subscribe.</p>
+    <div class="tablewrap"><table class="mem">
+      <thead><tr><th scope="col">Membership</th><th scope="col">Price</th><th scope="col">How sure</th><th scope="col">Notes</th></tr></thead>
+      <tbody id="memBody"></tbody>
+    </table></div>
+    <p class="terms">Coming next: the same order priced on Noon, Careem, Talabat and the restaurant's own app, checked every week.</p>
+  </section>
+
+  <section class="tip">
+    <h3>Found a deal we missed?</h3>
+    <p class="lede">Fill this in and we'll check it before it goes up. You'll get a message to copy and send to us.</p>
+    <form id="tipForm">
+      <label>Restaurant or app<input id="tPlace" required></label>
+      <label>Area<input id="tArea" placeholder="e.g. JLT"></label>
+      <label class="full">What's the deal?<input id="tDeal" required placeholder="e.g. 2-for-1 mains on weekdays"></label>
+      <label>Code (if any)<input id="tCode"></label>
+      <label>Ends on<input id="tEnds" type="date"></label>
+      <label class="full">Catch or conditions<textarea id="tTerms" rows="2" placeholder="Minimum spend, first order only, certain days..."></textarea></label>
+      <button class="btn full" type="submit">Make my message</button>
+    </form>
+    <div id="tipOut" hidden>
+      <div class="out" id="tipText"></div>
+      <div class="links" style="margin-top:8px">
+        <button class="btn" type="button" id="copyTip">Copy message</button>
+        <span>Send it to <span class="contact" id="contact1"></span></span>
+      </div>
+    </div>
+  </section>
+  <footer class="foot">
+    <p>Not affiliated with any restaurant, bank or app named here. Names are used only to say where a deal applies. Offers change without notice, so confirm with the venue or app before you go.</p>
+  </footer>
+</div>
+
+<script src="deals.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
